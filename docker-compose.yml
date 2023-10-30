@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  app:
+    container_name: payment # You can change container_name 
+    restart: always
+    build:
+      context: './'
+    expose:
+      - "9000"
+    ports: # You can change your port number according your need
+      - "9000:9000"                          
+    volumes:
+      - ./:/app
+    stdin_open: true
+    tty: true
+    environment:
+      DEBUG: 'true'
+    # If you change port number then change command port number
+    command: 'sh -c "/code/entrypoint.sh && exec python3 manage.py runserver 0.0.0.0:9000"'
+  
