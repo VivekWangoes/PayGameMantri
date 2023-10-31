@@ -129,7 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 PAYMENT_KEY = 'dede2d58-bea3-484d-8be7-c8a99aedf7f9'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-CSRF_TRUSTED_ORIGINS = ["https://crur.serveo.net", "pay.gamemantri.com"]
+CSRF_TRUSTED_ORIGINS = ["https://crur.serveo.net", "https://pay.gamemantri.com"]
 
 
 CORS_ALLOWED_ORIGINS = [
