@@ -13,10 +13,13 @@ class PaymentView(View):
         return render(request, 'home.html')
     
     def post(self, request):
-        amount = request.POST.get('amount')
-        data = payment_function(amount)
-        url = data['data']
-        return redirect(url['payment_url'])
+        try:
+            amount = request.POST.get('amount')
+            data = payment_function(amount)
+            url = data['data']
+            return redirect(url['payment_url'])
+        except Exception as e:
+            raise e
         # url = data['payment_url']
         return url
         return render(request, 'home.html')
